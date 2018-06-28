@@ -1,0 +1,26 @@
+{
+  "name": "vuepress-blog",
+  "version": "0.1.1",
+  "description": "Web applications built with Vuepress",
+  "scripts": {
+    "start": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iamlqyfly/vuepress-blog"
+  },
+  "author": "iamlqy",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "element-ui": "^2.4.0",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  }
+}
