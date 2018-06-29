@@ -1,7 +1,7 @@
 const helper = require('./../helper/')
 
 module.exports = {
-  repo: 'Iamlqyfly/vuepress-blog',
+  repo: 'Iamlqyfly/vuepressBlog',
   editLinks: false,
   docsDir: './dist',
   locales: {
