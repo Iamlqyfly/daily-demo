@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="content">
+  <view class="info">
+    <text>{{direction}}</text>
+    <text>{{angle}}°</text>
+  </view>
+
+  <view class="picture">
+     <image src="../../images/compass.png" 
+     style='transform: rotate({{rotate}}deg)'></image>
+  </view>
+</view>
