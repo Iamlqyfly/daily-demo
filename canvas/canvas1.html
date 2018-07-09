@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>canvas-01</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    #myCanvas {
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <p>Image to use:</p>
+  <img id="scream" src="25.gif"  width="220" height="277">
+  <p>Canvas:</p>
+  <canvas id="myCanvas" width="200" height="100"></canvas>
+  
+  <script type="text/javascript">
+    var c=document.getElementById("myCanvas"); // 找到canvas元素
+    var ctx=c.getContext("2d"); // 创建context对象
+    // 坐标
+    ctx.fillStyle="red";  //设置fillStyle属性可以是CSS颜色，渐变，或图案
+    ctx.fillRect(0,0,150,75) // fillRect(x,y,width,height) 方法定义了矩形当前的填充方式
+
+    // 路径
+    //moveTo(x,y) 定义线条开始坐标 lineTo(x,y) 定义线条结束坐标 绘制线条我们使用 stroke()
+
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,100);
+    ctx.stroke();
+
+    // 绘制圆 arc(x,y,r,start,stop) Math.PI表示180°，画圆的方向是顺时针
+    ctx.beginPath();
+    ctx.arc(95,50,40,0,2*Math.PI);
+    ctx.stroke();
+    
+    // 文本 font - 定义字体 fillText(text,x,y) - 在canvas上绘制实心的文本 strokeText(text,x,y) - 在 canvas 上绘制空心的文本
+     ctx.fillStyle="orange"
+     ctx.font="30px Arial";
+     ctx.fillText("Hello World",30,50); // ctx.strokeText("Hello World",30,50);
+
+     // 渐变 createLinearGradient(x,y,x1,y1) - 创建线条渐变
+     // createRadialGradient(x,y,r,x1,y1,r1) - 创建一个径向/圆渐变
+     //addColorStop()方法指定颜色停止，参数使用坐标来描述，可以是0至1.
+
+    // 创建渐变
+    var grd=ctx.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"purple");
+    grd.addColorStop(1, "white");
+
+    // 填充渐变
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,150,80);
+
+
+    // 创建渐变
+    var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+     
+    // 填充渐变
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,150,80);
+
+    //把一幅图像放置到画布上, 使用以下方法: drawImage(image,x,y)
+
+    var img=document.getElementById("scream");
+    img.onload = function() {
+      ctx.drawImage(img,10,10);
+    } 
+
+  </script>
+</body>
+</html>
