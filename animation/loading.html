@@ -1,0 +1,434 @@
+<html>
+  <head>
+    <title>loading</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      html,body {
+        margin: 0;
+        padding: 0;
+        background-color: #ECF0F1;
+      }
+      .content {
+        display: flex;
+        /*justify-content: space-around;*/
+        flex-wrap:  wrap;
+        padding: 100px;
+      }
+      .wrap {
+        width: 100px;
+        height: 120px;
+        background-color: #C5F0A4;
+        text-align: center;
+        padding: 20px;
+        margin: 20px;
+      }
+      .wrap:hover {
+        width: 110px;
+        height: 130px;
+        box-shadow: 5px 10px 11px #7DC383;
+      }
+      .L-line {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #4ECCA3;
+      }
+      .L-lineA-1 {
+        animation: L-loadingA 1.5s 0s  infinite;
+      }
+      .L-lineA-2 {
+        animation: L-loadingA 1.5s 0.3s  infinite;
+      }
+      .L-lineA-3 {
+        animation: L-loadingA 1.5s 0.6s  infinite;
+      }
+      .L-lineA-4 {
+        animation: L-loadingA 1.5s 0.9s  infinite;
+      }
+      .L-lineA-5 {
+        animation: L-loadingA 1.5s 1.2s infinite;
+      }
+
+      
+      .spread {
+        width: 180px;
+      }
+      .spread:hover {
+        width: 190px;
+        box-shadow: 5px 10px 11px #7DC383;
+      }
+      .L-lineB-1 {
+        animation: L-loadingB 1.5s 0s  infinite;
+      }
+      .L-lineB-2 {
+        animation: L-loadingB 1.5s 0.3s  infinite;
+      }
+      .L-lineB-3 {
+        animation: L-loadingB 1.5s 0.6s  infinite;
+      }
+      .L-lineB-4 {
+        animation: L-loadingB 1.5s 0.9s  infinite;
+      }
+      .L-lineB-5 {
+        animation: L-loadingB 1.5s 1.2s infinite;
+      } 
+
+      .L-lineC-1 {
+        animation: L-loadingC 1.5s 0s  ease-out infinite;
+      }
+      .L-lineC-2 {
+        animation: L-loadingC 1.5s 0.2s ease-out infinite;
+      }
+      .L-lineC-3 {
+        animation: L-loadingC 1.5s 0.4s ease-out infinite;
+      }
+      .L-lineC-4 {
+        animation: L-loadingC 1.5s 0.6s ease-out infinite;
+      }
+      .L-lineC-5 {
+        animation: L-loadingC 1.5s .8s ease-out infinite;
+      }
+
+      .L-lineD-1 {
+        animation: L-loadingD 1.5s 0s  ease-out infinite;
+      }
+      .L-lineD-2 {
+        animation: L-loadingD 1.5s 0.2s ease-out infinite;
+      }
+      .L-lineD-3 {
+        animation: L-loadingD 1.5s 0.4s ease-out infinite;
+      }
+      .L-lineD-4 {
+        animation: L-loadingD 1.5s 0.6s ease-out infinite;
+      }
+      .L-lineD-5 {
+        animation: L-loadingD 1.5s .8s ease-out infinite;
+      } 
+        
+      .large-e {
+        width: 350px;
+        text-align: left;
+       } 
+      .large-e:hover {
+        width: 360px;
+        box-shadow: 5px 10px 11px #7DC383;
+      }
+      .L-lineE-1 {
+        animation: L-loadingE 1.5s 0s  ease-out infinite;
+      }
+      .L-lineE-2 {
+        animation: L-loadingE 1.5s 0.2s ease-out infinite;
+      }
+      .L-lineE-3 {
+        animation: L-loadingE 1.5s 0.4s ease-out infinite;
+      }
+      .L-lineE-4 {
+        animation: L-loadingE 1.5s 0.6s ease-out infinite;
+      }
+      .L-lineE-5 {
+        animation: L-loadingE 1.5s .8s ease-out infinite;
+      } 
+      
+      .circle-f {
+        width: 250px;
+      }
+      .circle-f:hover {
+        width: 260px;
+        box-shadow: 5px 10px 11px #7DC383;
+      }
+      .L-circle {
+        width: 10px;
+        height: 10px;
+        padding: 10px;
+        border: 7px dashed #FF8364;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .L-lineF-1 {
+        animation: L-loadingF 1.5s 0s  ease-out infinite;
+      }
+      .L-lineF-2 {
+        animation: L-loadingF 1.5s 0.2s ease-out infinite;
+      }
+      .L-lineF-3 {
+        animation: L-loadingF 1.5s 0.4s ease-out infinite;
+      }
+      .L-lineF-4 {
+        animation: L-loadingF 1.5s 0.6s ease-out infinite;
+      }
+      .L-lineF-5 {
+        animation: L-loadingF 1.5s .8s ease-out infinite;
+      } 
+      
+      .L-ball {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        margin: 0 auto;
+        border: 4px solid #9c27b0;
+        border-radius: 100%;
+      }
+      .L-ball-header {
+        position: absolute;
+        width: 12px;
+        height: 45px;
+        left: 17px;
+        top: 0;
+      }
+      .L-ball1a {
+        position: absolute;
+        top: -10px;
+        left: -1px;
+        width: 16px;
+        height: 16px;
+        border-radius: 100%;
+        background: #F44336;
+      }
+      .L-lineG-1 {
+        animation: k-loadingG 1.5s linear infinite;
+      }
+             
+      @keyframes L-loadingA {
+        50% {
+          height: 40px;
+        }
+        100% {
+          height: 15px;
+        }
+      }
+      @keyframes L-loadingB {
+        50% {
+          width: 40px;
+        }
+        100% {
+          width: 15px;
+        }
+      }
+      @keyframes L-loadingC {
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+           transform: translateY(0);
+        }
+      }
+      @keyframes L-loadingD {
+        0% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+        30% {
+          transform: translateY(-8px);
+          opacity: .3;
+        }
+        50% {
+          transform: translateY(5px);
+          opacity: .6;
+        }
+        75% {
+          transform: translateY(-10px);
+          opacity: .8;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes L-loadingE {
+        50% {
+          transform: translateX(0);
+          opacity: .8;
+        }
+        100% {
+          transform: translateX(280px);
+          opacity: 0;
+        }
+      }
+      @keyframes L-loadingF {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+          opacity: .2;
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes k-loadingG {
+        100% {
+            transform: rotate(360deg);
+        }
+      }
+
+      
+        .k-ball2a {
+          position: absolute;
+          top: -10px;
+          left: -1px;
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          background: #F44336;
+        }  
+        .k-ball2b {
+          position: absolute;
+          top: 14px;
+          right: -25px;
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          background: #2b542c;
+        } 
+        .k-ball2c {
+          position: absolute;
+          bottom: -10px;
+          left: -1px;
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          background: #eee;
+        }   
+        .k-ball2d {
+          position: absolute;
+          top: 14px;
+          left: -27px;
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          background: #ffd500;
+        }
+        @keyframes k-loadingH {
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+         .k-spinner {
+           position: relative;
+           width: 45px;
+           height: 45px;
+           margin: 0 auto;
+           animation: k-loadingH 2s linear infinite;
+         }
+         .k-bubble-1, .k-bubble-2 {
+             position: absolute;
+             top: 0;
+             width: 25px;
+             height: 25px;
+             border-radius: 100%;
+             background-color: #4b9cdb;
+         }
+         .k-bubble-2 {
+             top: auto;
+             bottom: 0;
+         }
+         .k-loadingI-1 {
+             animation: k-loadingI 2s ease-in-out infinite;
+         }
+         .k-loadingI-2 {
+             animation: k-loadingI 2s -1s ease-in-out infinite;
+         }
+         @keyframes k-loadingI {
+             0%, 100% {
+                 transform: scale(0);
+             }
+             50% {
+                 transform: scale(1);
+             }
+         }
+      
+
+
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="wrap A">
+        <p>loading A</p>
+        <div class="L-line L-lineA-1"></div>
+        <div class="L-line L-lineA-2"></div>
+        <div class="L-line L-lineA-3"></div>
+        <div class="L-line L-lineA-4"></div>
+        <div class="L-line L-lineA-5"></div>
+      </div>
+
+      <div class="wrap spread B">
+        <p>loading B</p>
+        <div class="L-line L-lineB-1"></div>
+        <div class="L-line L-lineB-2"></div>
+        <div class="L-line L-lineB-3"></div>
+        <div class="L-line L-lineB-4"></div>
+        <div class="L-line L-lineB-5"></div>
+      </div>
+
+      <div class="wrap  C">
+        <p>loading C</p>
+        <div class="L-line L-lineC-1"></div>
+        <div class="L-line L-lineC-2"></div>
+        <div class="L-line L-lineC-3"></div>
+        <div class="L-line L-lineC-4"></div>
+        <div class="L-line L-lineC-5"></div>
+      </div>
+
+      <div class="wrap  D">
+        <p>loading D</p>
+        <div class="L-line L-lineD-1"></div>
+        <div class="L-line L-lineD-2"></div>
+        <div class="L-line L-lineD-3"></div>
+        <div class="L-line L-lineD-4"></div>
+        <div class="L-line L-lineD-5"></div>
+      </div>
+
+      <div class="wrap large-e E">
+        <p>loading E</p>
+        <div class="L-line L-lineE-1"></div>
+        <div class="L-line L-lineE-2"></div>
+        <div class="L-line L-lineE-3"></div>
+        <div class="L-line L-lineE-4"></div>
+        <div class="L-line L-lineE-5"></div>
+      </div>
+
+      <div class="wrap circle-f F">
+        <p>loading F</p>
+        <div class="L-circle L-lineF-1"></div>
+        <div class="L-circle L-lineF-2"></div>
+        <div class="L-circle L-lineF-3"></div>
+        <div class="L-circle L-lineF-4"></div>
+        <div class="L-circle L-lineF-5"></div>
+      </div>
+
+      <div class="wrap G">
+        <p>loading G</p>
+        <div class="L-ball">
+          <div class="L-ball-header L-lineG-1">
+            <div class="L-ball1a"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <p>loading-H</p>
+        <div class="L-ball">
+          <div class="L-ball-header L-lineG-1">
+            <div class="k-ball2a"></div>
+            <div class="k-ball2b"></div>
+            <div class="k-ball2c"></div>
+            <div class="k-ball2d"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <p>loading-I</p>
+        <div class="k-spinner">
+            <div class="k-bubble-1 k-loadingI-1"></div>
+            <div class="k-bubble-2 k-loadingI-2"></div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
