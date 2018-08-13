@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <style>
+    .btn {
+      background-color:lightblue;
+      color: black;
+      border: none;
+    }
+    .disabled{
+      background-color: #ddd;
+      border-color: #ddd;
+      color:#57a3f3;
+      cursor: not-allowed; 
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button @click="countdown" class="btn" :class="{disabled: !this.canClick}">
+      {{content}}
+    </button>
+  </div>
+
+  </button>
+
+  <script>
+   var vm = new Vue ({
+     el: '#app',
+     data: {
+       content: '发送验证码',
+       totalTime: 60,
+       canClick: true  //添加canClick
+     },
+     methods: {
+      // 在data里添加canClick，默认是true，如果canClick为true，countDown里的代码可以执行，
+      // 如果是false就不行。每执行一次就将canClick设为false，而只在倒计时结束的时候再改为true
+      countdown() {
+        if(!this.canClick) { return }
+        this.canClick = false
+        this.content = this.totalTime + 's后重新发送'
+        let clock = window.setInterval( () => {
+          this.totalTime--
+          this.content = this.totalTime + 's后重新发送'
+          if(this.totalTime < 0) {
+            window.clearInterval(clock)
+            this.content = '重新发送验证码'
+            this.totalTime = 60
+            this.canClick = true   //这里重新开启
+          }
+        },1000)
+      }
+     }
+   })
+  </script>
+
+</body>
+</html>
