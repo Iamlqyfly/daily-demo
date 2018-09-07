@@ -12,3 +12,4 @@
 
 #### 一个抽奖活动DEMO [演示地址](https://iamlqyfly.github.io/daily-demo/animation/lottery.html)
 <p style="font-size:14px">很久之前写的demo，都快忘记了~~嘤</pgit>
+
